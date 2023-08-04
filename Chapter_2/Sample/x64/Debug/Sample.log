@@ -1,4 +1,8 @@
 ﻿  Building 'Sample' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
   Sample.cpp
-C:\Users\ph03n1x\Desktop\windows_kernel_programming_exercises\Chapter_2\Sample\Sample.cpp(25,65): error C2440: '=': cannot convert from 'PVOID' to 'LPOSVERSIONINFOEXW'
-C:\Users\ph03n1x\Desktop\windows_kernel_programming_exercises\Chapter_2\Sample\Sample.cpp(25,45): message : Conversion from 'void*' to pointer to non-'void' requires an explicit cast
+  Sample.vcxproj -> C:\Users\ph03n1x\Desktop\windows_kernel_programming_exercises\Chapter_2\Sample\x64\Debug\Sample.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\ph03n1x\Desktop\windows_kernel_programming_exercises\Chapter_2\Sample\x64\Debug\Sample.sys
+  
+  Inf2Cat task was skipped as there were no inf files to process
+  

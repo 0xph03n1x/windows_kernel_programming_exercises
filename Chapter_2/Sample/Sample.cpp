@@ -1,3 +1,4 @@
+#pragma comment(lib, "ntdll.lib")
 #include <ntddk.h>
 
 void SampleUnload(_In_ PDRIVER_OBJECT Driver_Object) {
@@ -10,8 +11,15 @@ void SampleUnload(_In_ PDRIVER_OBJECT Driver_Object) {
 extern "C"
 NTSTATUS
 DriverEntry(_In_ PDRIVER_OBJECT Driver_Object, _In_ PUNICODE_STRING Registry_Path) {
+    UNREFERENCED_PARAMETER(Registry_Path);
+    NTSTATUS status = STATUS_SUCCESS;
 	Driver_Object->DriverUnload = SampleUnload;
 
+    RTL_OSVERSIONINFOW osVers;
+    osVers.dwOSVersionInfoSize = sizeof(osVers);
+    status = RtlGetVersion(&osVers);
+
+    KdPrint(("Version: %u.%u.%u", osVers.dwMajorVersion, osVers.dwMinorVersion, osVers.dwBuildNumber));
     KdPrint(("Sample driver initialized successfully!\n"));
 
 	return STATUS_SUCCESS;
